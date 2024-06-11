@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: white;
+      /* Change background color to white */
+      border: 1px solid transparent;
+      /* Remove border color */
+      margin-top: 0px;
+      box-shadow: 0 0 4px #00000040
+    }
+
+    .card {
+      border: 5px solid transparent;
+      /* Remove border color */
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 4px #00000040;
+      width: 500px;
+      background-color: white;
+      border-radius: 4px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .card {
+        width: 90%;
+        /* Adjusted width for smaller screens */
+      }
+    }
+
+    .footer-para {
+      text-align: center;
+      color: #003057;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .footer-para {
+        font-size: 16px
+          /* Adjusted width for smaller screens */
+      }
+    }
+
+    form {
+      width: 300px;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      /* Add space between labels and inputs */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #717271;
+      /* Default outline color */
+      transition: border-color 0.3s;
+      /* Default outline color */
+      border-radius: 4px;
+    }
+
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #007DA5;
+      /* Change border color when input is focused */
+      outline: none;
+      /* Remove default outline */
+      box-shadow: 0 0 0 1px #007DA5;
+      /* Add a blue shadow to mimic outline */
+    }
+
+
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 9px;
+      margin-top: 40px;
+      /* Add space between inputs and submit button */
+      box-sizing: border-box;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #003057;
+      border-radius: 5px;
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+
+    .remember-me {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      color: #003057;
+      height: 19px;
+      font-weight: 700;
+    }
+
+    .remember-me input[type="checkbox"] {
+      margin-right: 3px;
+    }
+
+    .forgot-password {
+      font-size: 14px;
+      color: #003057;
+      height: 19px;
+      font-weight: 700;
+    }
+
+    .verifyAccount {
+      font-size: 16px;
+      color: #003057;
+      height: 19px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .image {
+        padding-left: 1px;
+        padding-top: 0px;
+      
+    }
+    .image-coBrand {
+      padding-left: 4px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .image-coBrand {
+        padding-left: 85px;
+      }
+    }
+
+    .telemedicine {
+      letter-spacing: 14px;
+      text-align: center;
+      color: #00AEA9;
+      font-weight: 700;
+      padding-top: 60px;
+      font-size: 19px;
+    }
+
+    /* footer {
+  text-align: center;
+  padding: 1px;
+  background-color: white; 
+  border: 1px solid transparent; 
+  margin-top: 5px;
+  box-shadow: 0 0 4px #00000040 ;
+  margin-top: 50px;
+} */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 1px;
+      background-color: white;
+      /* Change background color to white */
+      border: 1px solid transparent;
+      /* Remove border color */
+      box-shadow: 0 0 4px #00000040;
+      margin-top: 0;
+      /* Remove any margin at the top */
+    }
+
+    .custom-letter-spacing {
+      font-size: 18px;
+      color: #00aea9;
+      letter-spacing: 8px;
+      word-spacing: 10px;
+      /* font-weight: bolder; */
+      text-align: center;
+      padding-top: 52px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      footer {
+        margin-top: 130px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        /* Margin-top for mobile screens */
+        background-color: #E4E4E4;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .custom-letter-spacing {
+        position: relative;
+        /* Set position relative for the container */
+        top: 35px;
+      }
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      .card {
+        height: auto;
+        max-height: 405px;
+      }
+    }
+
+    .icon-inner {
+      /* text-align: end; */
+      position: relative;
+
+      bottom: 32px;
+      right: 12px;
+      padding-bottom: 0;
+      margin-bottom: -22px;
+      float: right;
+      /* display: inline-flex; */
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      border-radius: 6px; 
+
+      z-index: 1;
+      right: 0;
+      
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      box-shadow: 0 0 1px #00000040;
+      line-height: 12px;
+      border-radius: 6px;
+      width: 112px;
+    
+
+    }
+    .dropdown-item:last-child {
+      border-bottom: none; 
+    }
+    .card-2 {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+}
+  
+
+    .show {
+      display: block;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .icon-inner {
+        position: relative;
+
+        bottom: 31px;
+        right: 35px;
+      }
+    }
+
+    .text-header {
+      text-align: end;
+      position: relative;
+
+      bottom: 4px;
+      right: 0px;
+      color: #4B4B4B;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      .text-header {
+        display: none;
+        
+      }
+      .mobile-number{
+         font-weight: 700;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav">
+    <img class="image-coBrand"  src="https://dcsaastestwebstore01.blob.core.windows.net/branding-assets/clients-logo/avibra.png" alt="dialcare" width="135" height="35">
+    <img class="image" src="https://www.dialcare.com/images/DialCare%20Telemedicine%20Simplified%20Logo.png" width="135" height="30">
+
+
+    <div class="language-selector" id="languageSelector">
+      <div>
+        <span class="icon-inner">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+          class="s-ion-icon">
+          <path id="Vector"
+            d="M10 18.75C10.6523 18.75 11.5781 18.1875 12.418 16.5117C12.8047 15.7383 13.1289 14.8047 13.3594 13.75H6.64062C6.87109 14.8047 7.19531 15.7383 7.58203 16.5117C8.42188 18.1875 9.34766 18.75 10 18.75ZM6.41797 12.5H13.582C13.6914 11.7109 13.75 10.8711 13.75 10C13.75 9.12891 13.6914 8.28906 13.582 7.5H6.41797C6.30859 8.28906 6.25 9.12891 6.25 10C6.25 10.8711 6.30859 11.7109 6.41797 12.5ZM6.64062 6.25H13.3594C13.1289 5.19531 12.8047 4.26172 12.418 3.48828C11.5781 1.8125 10.6523 1.25 10 1.25C9.34766 1.25 8.42188 1.8125 7.58203 3.48828C7.19531 4.26172 6.87109 5.19531 6.64062 6.25ZM14.8438 7.5C14.9453 8.30078 15 9.13672 15 10C15 10.8633 14.9453 11.6992 14.8438 12.5H18.3906C18.625 11.707 18.7539 10.8672 18.7539 10C18.7539 9.13281 18.6289 8.29297 18.3906 7.5H14.8438ZM17.9102 6.25C16.8984 4.12109 15.0547 2.46484 12.7969 1.70703C13.6172 2.8125 14.2656 4.39453 14.6406 6.25H17.9141H17.9102ZM5.36719 6.25C5.74219 4.39062 6.39062 2.8125 7.21094 1.70703C4.94922 2.46484 3.10156 4.12109 2.09375 6.25H5.36328H5.36719ZM1.61719 7.5C1.38281 8.29297 1.25391 9.13281 1.25391 10C1.25391 10.8672 1.37891 11.707 1.61719 12.5H5.15625C5.05469 11.6992 5 10.8633 5 10C5 9.13672 5.05469 8.30078 5.15625 7.5H1.61328H1.61719ZM12.793 18.293C15.0508 17.5312 16.8945 15.8789 17.9062 13.75H14.6367C14.2617 15.6094 13.6133 17.1875 12.793 18.293ZM7.20703 18.293C6.38672 17.1875 5.74219 15.6055 5.36328 13.75H2.09375C3.10547 15.8789 4.94922 17.5352 7.20703 18.293ZM10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20Z"
+            fill="#4B4B4B"></path>
+        </svg>
+      
+        <span class="text-header">English</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+          class="s-ion-icon" style="position: relative; top: 2px; cursor: pointer;">
+          <path d="M5 7L10 12L15 7" stroke="#4B4B4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      </div>
+      <div class="dropdown-content" id="languageDropdown">
+        <div class="card-2">
+        <a href="#" style="background-color: #003057;color: white;margin-bottom: 7px;">English</a>
+        <a href="#">Spanish</a>
+      </div>
+      </div>
+      
+        <!-- <div class="card">
+          <div class="dropdown-content" id="languageDropdown">
+            <a href="#" class="dropdown-item" style="background-color: #003057;color: white;margin-bottom: 7px;">English</a>
+            <a href="#" class="dropdown-item">Spanish</a>
+          </div>
+        </div> -->
+      
+      
+    </div>
+
+  </div>
+
+
+
+
+  <div class="card">
+    <form action="">
+      <label for="fname" style="color: #4B4B4B;font-size: 16px;font-weight: 700;">Username</label>
+      <input type="text" id="fname" name="fname">
+      <label for="lname" style="color: #4B4B4B;font-size: 16px;font-weight: 700;">Password</label>
+
+     
+      <div style="position: relative;">
+        <input type="password" id="lname" name="lname" style="padding-right: 30px;">
+       
+
+        <svg id="showPasswordIcon" xmlns="http://www.w3.org/2000/svg" width="23" height="19" viewBox="0 0 24 24" fill="none"
+        
+          style="position: absolute; top: 40%; right: 5px; transform: translateY(-50%); cursor: pointer; color: #4b4b4b;">
+
+          <path fill="currentColor"
+            d="M8.073 12.194L4.212 8.333c-1.52 1.657-2.096 3.317-2.106 3.351L2 12l.105.316C2.127 12.383 4.421 19 12.054 19c.929 0 1.775-.102 2.552-.273l-2.746-2.746a3.987 3.987 0 0 1-3.787-3.787zM12.054 5c-1.855 0-3.375.404-4.642.998L3.707 2.293L2.293 3.707l18 18l1.414-1.414l-3.298-3.298c2.638-1.953 3.579-4.637 3.593-4.679l.105-.316l-.105-.316C21.98 11.617 19.687 5 12.054 5zm1.906 7.546c.187-.677.028-1.439-.492-1.96s-1.283-.679-1.96-.492L10 8.586A3.955 3.955 0 0 1 12.054 8c2.206 0 4 1.794 4 4a3.94 3.94 0 0 1-.587 2.053l-1.507-1.507z" />
+
+        </svg>
+        <svg id="hidePasswordIcon" xmlns="http://www.w3.org/2000/svg" width="21" height="14" fill="none" viewBox="0 0 576 512"
+          stroke="#4B4B4B" stroke-width="2"
+          style="position: absolute; top: 40%; right: 5px; transform: translateY(-50%); cursor: pointer; color: #4b4b4b;display: none;">
+            
+          <path fill="currentColor"
+            d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144a143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79a47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z" />
+        </svg>
+      </div>
+
+
+
+      <div class="remember-forgot">
+        <div class="remember-me">
+          <input type="checkbox" id="remember" name="remember">
+          <label for="remember" style="color: #003057; padding-top: 4px; font-size: 14px;">Remember Username</label>
+        </div>
+        <div class="forgot-password">
+          <a href="#" style="color: #003057;font-size: 14px;">Forgot password?</a>
+        </div>
+      </div>
+      <input type="submit" class="login" value="LOG IN">
+    </form>
+
+    <p style="text-align: center;padding-top: 20px;font-size: 16px;font-weight: 400;color: #4B4B4B;">Already a member,
+      but you need to complete registration?</p>
+    <p class="verifyAccount">
+      <a href="#" style="color: #003057;">Verify Your Account</a>
+    </p>
+
+
+
+    <div>
+      <h1 class="custom-letter-spacing">TELEMEDICINE SIMPLIFIED</h1>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-para">@2024 DialCare, LLC. All rights reserved. Privacy Policy | Terms and Conditions | <span
+      class="mobile-number">855-335-2255</span></p>
+
+  </footer>
+
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get the icon and text elements
+      var icon = document.querySelector(".icon-inner");
+      var text = document.querySelector(".text-header");
+
+      // Get the dropdown content
+      var dropdownContent = document.getElementById("languageDropdown");
+
+      // Add click event listeners to the icon and text
+      icon.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdownContent.classList.toggle("show");
+      });
+
+      text.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdownContent.classList.toggle("show");
+      });
+
+      // Close the dropdown when clicking outside of it
+      document.addEventListener("click", function (event) {
+        if (!event.target.matches('.icon-inner') && !event.target.matches('.text-header')) {
+          dropdownContent.classList.remove('show');
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var showIcon = document.getElementById("showPasswordIcon");
+      var hideIcon = document.getElementById("hidePasswordIcon");
+      var passwordInput = document.getElementById("lname");
+
+      hideIcon.addEventListener("click", function () {
+        passwordInput.type = "text";
+        hideIcon.style.display = "none";
+        showIcon.style.display = "block";
+      });
+
+      showIcon.addEventListener("click", function () {
+        passwordInput.type = "password";
+        showIcon.style.display = "none";
+        hideIcon.style.display = "block";
+      });
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
