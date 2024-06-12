@@ -327,16 +327,8 @@ input[type="text"]:focus {
 </span>
     
 
-<div class="card">
-    <p class="forgotpassword">Forgot Your Password?</p>
-    <p class="registeredemail">Don't worry, it happens!<br>Please enter registered email.</p>
-    <form>
-        <label for="email" style="color: #4B4B4B;font-size: 16px;font-weight: 700;">Email</label>
-  <input type="text" id="email" name="email">
-  <input type="submit" class="login" value="SEND CODE">
-    </form>
-
-
+<div id="api" role="main">
+   
 
 <div>
 <h1 class="custom-letter-spacing">TELEMEDICINE SIMPLIFIED</h1>
@@ -351,38 +343,7 @@ input[type="text"]:focus {
 
 
 
-    
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Get the icon and text elements
-    var icon = document.querySelector(".icon-inner");
-    var text = document.querySelector(".text-header");
-    
-    // Get the dropdown content
-    var dropdownContent = document.getElementById("languageDropdown");
-  
-    // Add click event listeners to the icon and text
-    icon.addEventListener("click", function(event) {
-      event.stopPropagation();
-      dropdownContent.classList.toggle("show");
-    });
-  
-    text.addEventListener("click", function(event) {
-      event.stopPropagation();
-      dropdownContent.classList.toggle("show");
-    });
-  
-    // Close the dropdown when clicking outside of it
-    document.addEventListener("click", function(event) {
-      if (!event.target.matches('.icon-inner') && !event.target.matches('.text-header')) {
-        dropdownContent.classList.remove('show');
-      }
-    });
-  });
-  
-  
-  
-  </script>
+ 
 
 </body>
 </html>
