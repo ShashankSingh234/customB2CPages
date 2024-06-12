@@ -69,23 +69,5 @@
             <input type="submit" value="Sign In">-->
         </form>
     </div>
-
-    <script>
-        // Handle form submission
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Capture the form data
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-
-            // TODO: Integrate with Azure AD B2C for authentication
-            // This example does not perform any real authentication.
-
-            console.log('Email:', email);
-            console.log('Password:', password);
-            alert('Form submitted! (In actual implementation, this will authenticate the user via Azure AD B2C)');
-        });
-    </script>
 </body>
 </html>
